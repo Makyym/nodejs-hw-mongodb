@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-const studentsSchema = new Schema({
+const contactsSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -30,4 +30,4 @@ const studentsSchema = new Schema({
     versionKey: false,
 });
 
-export const StudentsCollection = model('Students', studentsSchema);
+export const ContactsCollection = model('Contacts', contactsSchema);
