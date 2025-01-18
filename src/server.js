@@ -1,16 +1,7 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import pino from 'pino-http';
 import cors from 'cors';
-
-dotenv.config();
-
-function getEnvVar (name, defaultValue) {
-    const value = process.env[name];
-    if (value) return value;
-    if (defaultValue) return defaultValue;
-    throw new Error(`Missing: process.env['${name}'].`);
-};
+import { getEnvVar } from './utils/getEnvVar.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
 
