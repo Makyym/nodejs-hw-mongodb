@@ -1,8 +1,9 @@
-const { Router } = require("express");
-const { validateBody } = require("../middlewares/validateBody.js");
-const { registerUserSchema, loginUserSchema } = require("../validation/auth.js");
-const { registerUserController, loginUserController, refreshUserSessionController, logoutUserController } = require("../controllers/auth.js");
-const { ctrlWrapper } = require("../utils/ctrlWrapper.js");
+import { Router } from "express";
+import { ctrlWrapper } from "../utils/ctrlWrapper.js";
+import { validateBody } from "../middlewares/validateBody.js";
+import { loginUserSchema, registerUserSchema } from "../validation/auth.js";
+import { loginUserController, logoutUserController, refreshUserSessionController, registerUserController } from "../controllers/auth.js";
+
 
 const router = Router();
 

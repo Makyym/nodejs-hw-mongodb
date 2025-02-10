@@ -4,7 +4,6 @@ import bcrypt from 'bcrypt';
 import { SessionsCollection } from "../db/models/session.js";
 import { FIFTEEN_MINUTES, THIRTY_DAYS } from "../constants/index.js";
 import { randomBytes } from "crypto";
-import { ref } from "joi";
 
 export const registerUser = async (payload) => {
     const user = await UsersCollection.findOne({email: payload.email});
