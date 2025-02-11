@@ -23,7 +23,7 @@ export const getAllContacts = async ({
         contactsQuery.where('isFavourite').equals(filter.isFavourite);
     };
 
-    const contactsCount = ContactsCollection.find()
+    const contactsCount = ContactsCollection.find({userId})
     .merge(contactsQuery)
     .countDocuments();
 
@@ -44,7 +44,9 @@ export const getAllContacts = async ({
 };
 
 export const getContactById = async (contactId, userId) => {
-    const contact = await ContactsCollection.findOne({contactId, userId});
+    const contact = await ContactsCollection.findOne({
+        _id: contactId,
+        userId});
     return contact;
 };
 
