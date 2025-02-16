@@ -6,12 +6,15 @@ import router from './routers/index.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import cookieParser from 'cookie-parser';
+import { UPLOAD_DIR } from './constants/index.js';
 
 const PORT = Number(getEnvVar('PORT', '3000'));
 
 export const setupServer = () => {
 
     const app = express();
+
+    app.use('/uploads', express.static(UPLOAD_DIR));
 
     app.use(express.json());
 
