@@ -15,7 +15,6 @@ requestBody:
           - name
           - phoneNumber
           - contactType
-          - parentId
         properties:
           name:
             description: "Contact's name"
@@ -38,13 +37,10 @@ requestBody:
             description: 'Whether is contact is favourite'
             type: boolean
             example: false
-          userId:
-            description: "Contact's user id"
-            type: string
-            example: 65e4decdd286b30065d54af9
           photo:
             description: "Link to contact's photo"
             type: string
+            format: binary
             example: https://res.cloudinary.com/uqwgdu/image/upload/image.png
 responses:
   '201':

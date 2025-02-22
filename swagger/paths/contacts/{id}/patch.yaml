@@ -44,6 +44,7 @@ requestBody:
           photo:
             type: string
             example: "photoUrl"
+            format: binary
 responses:
   '200':
     description: 'Successfully patched a contact'
